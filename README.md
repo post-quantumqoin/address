@@ -1,5 +1,5 @@
 # address
-The Qoin address type defines multiple address types within the Qion network.
+The Qoin address type defines multiple address types within the Post-Quantum Qoin network.
 
 ## Install
 

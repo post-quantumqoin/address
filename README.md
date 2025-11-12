@@ -13,7 +13,7 @@ for each format
 ```golang
 // address from ID
 idAddress := NewIDAddress(id)
-
+```
 
 Serialization
 

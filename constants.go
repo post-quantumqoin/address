@@ -51,7 +51,7 @@ var UndefAddressString = "<empty>"
 // MaxInt64StringLength defines the maximum length of `int64` as a string.
 const MaxInt64StringLength = 19
 
-// PayloadHashLength defines the hash length taken over addresses using the Actor and SECP256K1 protocols.
+// PayloadHashLength defines the hash length taken over addresses using the PQC and SECP256K1 protocols.
 const PayloadHashLength = 20
 
 // ChecksumHashLength defines the hash length used for calculating address checksums.

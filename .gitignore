@@ -30,3 +30,8 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+.update-modules

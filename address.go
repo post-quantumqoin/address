@@ -66,8 +66,8 @@ const (
 	ID Protocol = iota
 	// SECP256K1 represents the address SECP256K1 protocol.
 	SECP256K1
-	// Actor represents the address Actor protocol.
-	Actor
+	// Contract represents the address Contract protocol.
+	Contract
 	// BLS represents the address BLS protocol.
 	BLS
 	// Delegated represents the delegated (f4) address protocol.
@@ -172,9 +172,9 @@ func NewSecp256k1Address(pubkey []byte) (Address, error) {
 	return newAddress(SECP256K1, addressHash(pubkey))
 }
 
-// NewActorAddress returns an address using the Actor protocol.
-func NewActorAddress(data []byte) (Address, error) {
-	return newAddress(Actor, addressHash(data))
+// NewContractAddress returns an address using the contract protocol.
+func NewContractAddress(data []byte) (Address, error) {
+	return newAddress(Contract, addressHash(data))
 }
 
 // NewBLSAddress returns an address using the BLS protocol.
@@ -249,7 +249,7 @@ func newAddress(protocol Protocol, payload []byte) (Address, error) {
 		if v > math.MaxInt64 {
 			return Undef, xerrors.Errorf("id addresses must be less than 2^63: %w", ErrInvalidPayload)
 		}
-	case SECP256K1, Actor, PQC:
+	case SECP256K1, Contract, PQC:
 		if len(payload) != PayloadHashLength {
 			return Undef, ErrInvalidLength
 		}
@@ -298,7 +298,7 @@ func encode(network Network, addr Address) (string, error) {
 	payload := addr.Payload()
 	var strAddr string
 	switch protocol {
-	case SECP256K1, Actor, BLS, Delegated, PQC:
+	case SECP256K1, Contract, BLS, Delegated, PQC:
 		// The checksum and prefix is the same for all protocols
 		cksm := Checksum(append([]byte{protocol}, payload...))
 		strAddr = ntwk + fmt.Sprintf("%d", protocol)
@@ -365,7 +365,7 @@ func decode(a string) (Address, error) {
 	case '1':
 		protocol = SECP256K1
 	case '2':
-		protocol = Actor
+		protocol = Contract
 	case '3':
 		protocol = BLS
 	case '4':
@@ -433,7 +433,7 @@ func decode(a string) (Address, error) {
 		payload = payloadcksm[:len(payloadcksm)-ChecksumHashLength]
 		cksum = payloadcksm[len(payloadcksm)-ChecksumHashLength:]
 
-		if protocol == SECP256K1 || protocol == Actor || protocol == PQC {
+		if protocol == SECP256K1 || protocol == Contract || protocol == PQC {
 			if len(payload) != PayloadHashLength {
 				return Undef, ErrInvalidLength
 			}

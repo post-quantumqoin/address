@@ -54,7 +54,7 @@ var allTestAddresses = []string{
 	"t2nuqrg7vuysaue2pistjjnt3fadsdzvyuatqtfei",
 	"t24dd4ox4c2vpf5vk5wkadgyyn6qtuvgcpxxon64a",
 	"t2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y",
-	"t3vvmn62lofvhjd2ugzca6sof2j2ubwok6cj4xxbfzz4yuxfkgobpihhd2thlanmsh3w2ptld2gqkn2jvlss4a",
+
 	"t3wmuu6crofhqmm3v4enos73okk2l366ck6yc4owxwbdtkmpk42ohkqxfitcpa57pjdcftql4tojda2poeruwa",
 	"t3s2q2hzhkpiknjgmf4zq3ejab2rh62qbndueslmsdzervrhapxr7dftie4kpnpdiv2n6tvkr743ndhrsw6d3a",
 	"t3q22fijmmlckhl56rn5nkyamkph3mcfu5ed6dheq53c244hfmnq2i7efdma3cj5voxenwiummf2ajlsbxc65a",
@@ -79,7 +79,7 @@ func TestVectorsIDAddress(t *testing.T) {
 
 	for _, tc := range testCases {
 		tc := tc
-		t.Run(fmt.Sprintf("testing actorID address: %s", tc.expected), func(t *testing.T) {
+		t.Run(fmt.Sprintf("testing Contract ID address: %s", tc.expected), func(t *testing.T) {
 			assert := assert.New(t)
 
 			// Round trip encoding and decoding from string
@@ -105,7 +105,7 @@ func TestVectorSecp256k1Address(t *testing.T) {
 			193, 13, 114, 250, 33, 102, 102, 169, 108, 59, 193, 57, 32, 211,
 			255, 35, 63, 208, 188, 5},
 			"t15ihq5ibzwki2b4ep2f46avlkrqzhpqgtga7pdrq",
-			"f15ihq5ibzwki2b4ep2f46avlkrqzhpqgtga7pdrq",
+			"Q15ihq5ibzwki2b4ep2f46avlkrqzhpqgtga7pdrq",
 		},
 
 		{[]byte{4, 118, 135, 185, 16, 55, 155, 242, 140, 190, 58, 234, 103, 75,
@@ -114,7 +114,7 @@ func TestVectorSecp256k1Address(t *testing.T) {
 			82, 176, 225, 232, 135, 145, 124, 57, 53, 118, 238, 240, 147, 246,
 			30, 189, 58, 208, 111, 127, 218},
 			"t12fiakbhe2gwd5cnmrenekasyn6v5tnaxaqizq6a",
-			"f12fiakbhe2gwd5cnmrenekasyn6v5tnaxaqizq6a",
+			"Q12fiakbhe2gwd5cnmrenekasyn6v5tnaxaqizq6a",
 		},
 		{[]byte{4, 222, 253, 208, 16, 1, 239, 184, 110, 1, 222, 213, 206, 52,
 			248, 71, 167, 58, 20, 129, 158, 230, 65, 188, 182, 11, 185, 41, 147,
@@ -122,7 +122,7 @@ func TestVectorSecp256k1Address(t *testing.T) {
 			65, 99, 163, 150, 52, 155, 35, 193, 28, 194, 255, 53, 157, 229, 75,
 			226, 135, 234, 98, 49, 155},
 			"t1wbxhu3ypkuo6eyp6hjx6davuelxaxrvwb2kuwva",
-			"f1wbxhu3ypkuo6eyp6hjx6davuelxaxrvwb2kuwva",
+			"Q1wbxhu3ypkuo6eyp6hjx6davuelxaxrvwb2kuwva",
 		},
 		{[]byte{4, 3, 237, 18, 200, 20, 182, 177, 13, 46, 224, 157, 149, 180,
 			104, 141, 178, 209, 128, 208, 169, 163, 122, 107, 106, 125, 182, 61,
@@ -130,7 +130,7 @@ func TestVectorSecp256k1Address(t *testing.T) {
 			189, 57, 50, 145, 207, 229, 210, 119, 186, 118, 222, 69, 227, 224,
 			133, 163, 118, 129, 191, 54, 69, 210},
 			"t1xtwapqc6nh4si2hcwpr3656iotzmlwumogqbuaa",
-			"f1xtwapqc6nh4si2hcwpr3656iotzmlwumogqbuaa",
+			"Q1xtwapqc6nh4si2hcwpr3656iotzmlwumogqbuaa",
 		},
 		{[]byte{4, 247, 150, 129, 154, 142, 39, 22, 49, 175, 124, 24, 151, 151,
 			181, 69, 214, 2, 37, 147, 97, 71, 230, 1, 14, 101, 98, 179, 206, 158,
@@ -138,7 +138,7 @@ func TestVectorSecp256k1Address(t *testing.T) {
 			166, 252, 32, 172, 144, 251, 241, 251, 242, 113, 48, 164, 236, 195,
 			228, 3, 183, 5, 118},
 			"t1xcbgdhkgkwht3hrrnui3jdopeejsoatkzmoltqy",
-			"f1xcbgdhkgkwht3hrrnui3jdopeejsoatkzmoltqy",
+			"Q1xcbgdhkgkwht3hrrnui3jdopeejsoatkzmoltqy",
 		},
 		{[]byte{4, 66, 131, 43, 248, 124, 206, 158, 163, 69, 185, 3, 80, 222,
 			125, 52, 149, 133, 156, 164, 73, 5, 156, 94, 136, 221, 231, 66, 133,
@@ -146,7 +146,7 @@ func TestVectorSecp256k1Address(t *testing.T) {
 			167, 174, 5, 191, 184, 214, 142, 183, 90, 82, 104, 120, 44, 248, 111,
 			200, 112, 43, 239, 138, 31, 224},
 			"t17uoq6tp427uzv7fztkbsnn64iwotfrristwpryy",
-			"f17uoq6tp427uzv7fztkbsnn64iwotfrristwpryy",
+			"Q17uoq6tp427uzv7fztkbsnn64iwotfrristwpryy",
 		},
 	}
 
@@ -175,16 +175,16 @@ func TestVectorSecp256k1Address(t *testing.T) {
 	}
 }
 
-func TestRandomActorAddress(t *testing.T) {
+func TestRandomContractAddress(t *testing.T) {
 	assert := assert.New(t)
 
-	actorMsg := make([]byte, 20)
+	contractMsg := make([]byte, 20)
 	//lint:ignore SA1019 we want non-crypto randomness
-	rand.Read(actorMsg)
+	rand.Read(contractMsg)
 
-	addr, err := NewActorAddress(actorMsg)
+	addr, err := NewContractAddress(contractMsg)
 	assert.NoError(err)
-	assert.Equal(Actor, addr.Protocol())
+	assert.Equal(Contract, addr.Protocol())
 
 	str, err := encode(Mainnet, addr)
 	assert.NoError(err)
@@ -194,7 +194,7 @@ func TestRandomActorAddress(t *testing.T) {
 	assert.Equal(addr, maybe)
 }
 
-func TestVectorActorAddress(t *testing.T) {
+func TestVectorContractAddress(t *testing.T) {
 	testCases := []struct {
 		input                  []byte
 		expectedTestnetAddrStr string
@@ -203,34 +203,34 @@ func TestVectorActorAddress(t *testing.T) {
 		{[]byte{118, 18, 129, 144, 205, 240, 104, 209, 65, 128, 68, 172, 192,
 			62, 11, 103, 129, 151, 13, 96},
 			"t24vg6ut43yw2h2jqydgbg2xq7x6f4kub3bg6as6i",
-			"f24vg6ut43yw2h2jqydgbg2xq7x6f4kub3bg6as6i",
+			"Q24vg6ut43yw2h2jqydgbg2xq7x6f4kub3bg6as6i",
 		},
 		{[]byte{44, 175, 184, 226, 224, 107, 186, 152, 234, 101, 124, 92, 245,
 			244, 32, 35, 170, 35, 232, 142},
 			"t25nml2cfbljvn4goqtclhifepvfnicv6g7mfmmvq",
-			"f25nml2cfbljvn4goqtclhifepvfnicv6g7mfmmvq",
+			"Q25nml2cfbljvn4goqtclhifepvfnicv6g7mfmmvq",
 		},
 		{[]byte{2, 44, 158, 14, 162, 157, 143, 64, 197, 106, 190, 195, 92, 141,
 			88, 125, 160, 166, 76, 24},
 			"t2nuqrg7vuysaue2pistjjnt3fadsdzvyuatqtfei",
-			"f2nuqrg7vuysaue2pistjjnt3fadsdzvyuatqtfei",
+			"Q2nuqrg7vuysaue2pistjjnt3fadsdzvyuatqtfei",
 		},
 		{[]byte{223, 236, 3, 14, 32, 79, 15, 89, 216, 15, 29, 94, 233, 29, 253,
 			6, 109, 127, 99, 189},
 			"t24dd4ox4c2vpf5vk5wkadgyyn6qtuvgcpxxon64a",
-			"f24dd4ox4c2vpf5vk5wkadgyyn6qtuvgcpxxon64a",
+			"Q24dd4ox4c2vpf5vk5wkadgyyn6qtuvgcpxxon64a",
 		},
 		{[]byte{61, 58, 137, 232, 221, 171, 84, 120, 50, 113, 108, 109, 70, 140,
 			53, 96, 201, 244, 127, 216},
 			"t2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y",
-			"f2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y",
+			"Q2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y",
 		},
 	}
 
 	for _, tc := range testCases {
 		tc := tc
 		name := fmt.Sprintf(
-			"testing Actor address: %s (testnet), %s (mainnet)",
+			"testing Contract address: %s (testnet), %s (mainnet)",
 			tc.expectedTestnetAddrStr,
 			tc.expectedMainnetAddrStr,
 		)
@@ -240,7 +240,7 @@ func TestVectorActorAddress(t *testing.T) {
 			// Testnet
 			// Round trip encoding and decoding from string
 			CurrentNetwork = Testnet
-			addr, err := NewActorAddress(tc.input)
+			addr, err := NewContractAddress(tc.input)
 			assert.NoError(err)
 
 			validateAddress(t, addr, addressHash(tc.input), tc.expectedTestnetAddrStr)
@@ -292,35 +292,35 @@ func TestVectorBLSAddress(t *testing.T) {
 			112, 94, 131, 156, 122, 153, 214, 6, 178, 71, 221, 180, 249, 172, 122,
 			52, 20, 221},
 			"t3vvmn62lofvhjd2ugzca6sof2j2ubwok6cj4xxbfzz4yuxfkgobpihhd2thlanmsh3w2ptld2gqkn2jvlss4a",
-			"f3vvmn62lofvhjd2ugzca6sof2j2ubwok6cj4xxbfzz4yuxfkgobpihhd2thlanmsh3w2ptld2gqkn2jvlss4a",
+			"Q3vvmn62lofvhjd2ugzca6sof2j2ubwok6cj4xxbfzz4yuxfkgobpihhd2thlanmsh3w2ptld2gqkn2jvlss4a",
 		},
 		{[]byte{179, 41, 79, 10, 46, 41, 224, 198, 110, 188, 35, 93, 47, 237,
 			202, 86, 151, 191, 120, 74, 246, 5, 199, 90, 246, 8, 230, 166, 61, 92,
 			211, 142, 168, 92, 168, 152, 158, 14, 253, 233, 24, 139, 56, 47,
 			147, 114, 70, 13},
 			"t3wmuu6crofhqmm3v4enos73okk2l366ck6yc4owxwbdtkmpk42ohkqxfitcpa57pjdcftql4tojda2poeruwa",
-			"f3wmuu6crofhqmm3v4enos73okk2l366ck6yc4owxwbdtkmpk42ohkqxfitcpa57pjdcftql4tojda2poeruwa",
+			"Q3wmuu6crofhqmm3v4enos73okk2l366ck6yc4owxwbdtkmpk42ohkqxfitcpa57pjdcftql4tojda2poeruwa",
 		},
 		{[]byte{150, 161, 163, 228, 234, 122, 20, 212, 153, 133, 230, 97, 178,
 			36, 1, 212, 79, 237, 64, 45, 29, 9, 37, 178, 67, 201, 35, 88, 156,
 			15, 188, 126, 50, 205, 4, 226, 158, 215, 141, 21, 211, 125, 58, 170,
 			63, 230, 218, 51},
 			"t3s2q2hzhkpiknjgmf4zq3ejab2rh62qbndueslmsdzervrhapxr7dftie4kpnpdiv2n6tvkr743ndhrsw6d3a",
-			"f3s2q2hzhkpiknjgmf4zq3ejab2rh62qbndueslmsdzervrhapxr7dftie4kpnpdiv2n6tvkr743ndhrsw6d3a",
+			"Q3s2q2hzhkpiknjgmf4zq3ejab2rh62qbndueslmsdzervrhapxr7dftie4kpnpdiv2n6tvkr743ndhrsw6d3a",
 		},
 		{[]byte{134, 180, 84, 37, 140, 88, 148, 117, 247, 209, 111, 90, 172, 1,
 			138, 121, 246, 193, 22, 157, 32, 252, 51, 146, 29, 216, 181, 206, 28,
 			172, 108, 52, 143, 144, 163, 96, 54, 36, 246, 174, 185, 27, 100, 81,
 			140, 46, 128, 149},
 			"t3q22fijmmlckhl56rn5nkyamkph3mcfu5ed6dheq53c244hfmnq2i7efdma3cj5voxenwiummf2ajlsbxc65a",
-			"f3q22fijmmlckhl56rn5nkyamkph3mcfu5ed6dheq53c244hfmnq2i7efdma3cj5voxenwiummf2ajlsbxc65a",
+			"Q3q22fijmmlckhl56rn5nkyamkph3mcfu5ed6dheq53c244hfmnq2i7efdma3cj5voxenwiummf2ajlsbxc65a",
 		},
 		{[]byte{167, 114, 107, 3, 128, 34, 247, 90, 56, 70, 23, 88, 83, 96, 206,
 			230, 41, 7, 10, 45, 157, 40, 113, 41, 101, 229, 242, 110, 204, 64,
 			133, 131, 130, 128, 55, 36, 237, 52, 242, 114, 3, 54, 240, 157, 182,
 			49, 240, 116},
 			"t3u5zgwa4ael3vuocgc5mfgygo4yuqocrntuuhcklf4xzg5tcaqwbyfabxetwtj4tsam3pbhnwghyhijr5mixa",
-			"f3u5zgwa4ael3vuocgc5mfgygo4yuqocrntuuhcklf4xzg5tcaqwbyfabxetwtj4tsam3pbhnwghyhijr5mixa",
+			"Q3u5zgwa4ael3vuocgc5mfgygo4yuqocrntuuhcklf4xzg5tcaqwbyfabxetwtj4tsam3pbhnwghyhijr5mixa",
 		},
 	}
 
@@ -391,7 +391,7 @@ func TestVectorBLSAddress(t *testing.T) {
 func TestInvalidStringAddresses(t *testing.T) {
 	idPayloadMaxLength := MaxInt64StringLength
 	secpPayloadChecksumFixedLength := PayloadHashLength + ChecksumHashLength
-	actorPayloadChecksumFixedLength := secpPayloadChecksumFixedLength
+	contractPayloadChecksumFixedLength := secpPayloadChecksumFixedLength
 	blsPayloadChecksumFixedLength := BlsPublicKeyBytes + ChecksumHashLength
 
 	testCases := []struct {
@@ -402,8 +402,8 @@ func TestInvalidStringAddresses(t *testing.T) {
 		inputToEncode string
 		expetErr      error
 	}{
-		{"Q2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y", "", ErrUnknownNetwork},
-		{"t5gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y", "", ErrUnknownProtocol},
+		{"f2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y", "", ErrUnknownNetwork},
+		{"t6gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y", "", ErrUnknownProtocol},
 		{"t2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr24y", "", ErrInvalidChecksum},
 		{"t0banananananannnnnnnnn", "", ErrInvalidLength},
 		{"t0banananananannnnnnn", "", ErrInvalidPayload},
@@ -411,8 +411,8 @@ func TestInvalidStringAddresses(t *testing.T) {
 		{"t2gfvuyh7v2sx3paTm1k23wdzmhyhtmqctasbr24y", "", base32.CorruptInputError(14)}, // 'T' is not in base32 alphabet
 		{"t2", "", ErrInvalidLength},
 		{"t1234q", "", ErrInvalidLength},
-		{"Q2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y", "", ErrUnknownNetwork},
-		{"t5gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y", "", ErrUnknownProtocol},
+		{"f2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y", "", ErrUnknownNetwork},
+		{"t6gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr23y", "", ErrUnknownProtocol},
 		{"t2gfvuyh7v2sx3patm5k23wdzmhyhtmqctasbr24y", "", ErrInvalidChecksum},
 		{strings.Repeat("a", MaxAddressStringLength+1), "", ErrInvalidLength},
 		{"t", "", ErrInvalidLength},
@@ -424,9 +424,9 @@ func TestInvalidStringAddresses(t *testing.T) {
 		{"t1", strings.Repeat("a", secpPayloadChecksumFixedLength), ErrInvalidChecksum},
 		{"t1", strings.Repeat("a", secpPayloadChecksumFixedLength+1), ErrInvalidLength},
 		{"t1", strings.Repeat("a", secpPayloadChecksumFixedLength-1), ErrInvalidLength},
-		{"t2", strings.Repeat("a", actorPayloadChecksumFixedLength), ErrInvalidChecksum},
-		{"t2", strings.Repeat("a", actorPayloadChecksumFixedLength+1), ErrInvalidLength},
-		{"t2", strings.Repeat("a", actorPayloadChecksumFixedLength-1), ErrInvalidLength},
+		{"t2", strings.Repeat("a", contractPayloadChecksumFixedLength), ErrInvalidChecksum},
+		{"t2", strings.Repeat("a", contractPayloadChecksumFixedLength+1), ErrInvalidLength},
+		{"t2", strings.Repeat("a", contractPayloadChecksumFixedLength-1), ErrInvalidLength},
 		{"t3", strings.Repeat("a", blsPayloadChecksumFixedLength), ErrInvalidChecksum},
 		{"t3", strings.Repeat("a", blsPayloadChecksumFixedLength+1), ErrInvalidLength},
 		{"t3", strings.Repeat("a", blsPayloadChecksumFixedLength-1), ErrInvalidLength},
@@ -456,7 +456,7 @@ func TestInvalidByteAddresses(t *testing.T) {
 		expectErr error
 	}{
 		// Unknown Protocol
-		{[]byte{5, 4, 4}, ErrUnknownProtocol},
+		{[]byte{6, 4, 4}, ErrUnknownProtocol},
 
 		// ID protocol
 		{[]byte{0}, ErrInvalidLength},
@@ -465,7 +465,7 @@ func TestInvalidByteAddresses(t *testing.T) {
 		{append([]byte{1}, make([]byte, PayloadHashLength-1)...), ErrInvalidLength},
 		{append([]byte{1}, make([]byte, PayloadHashLength+1)...), ErrInvalidLength},
 
-		// Actor Protocol
+		// Contract Protocol
 		{append([]byte{2}, make([]byte, PayloadHashLength-1)...), ErrInvalidLength},
 		{append([]byte{2}, make([]byte, PayloadHashLength+1)...), ErrInvalidLength},
 
@@ -476,6 +476,10 @@ func TestInvalidByteAddresses(t *testing.T) {
 		// Delegate Protocol
 		// - subaddress exceeds the limit
 		{append([]byte{4, 0}, make([]byte, MaxSubaddressLen+1)...), ErrInvalidLength},
+
+		// PQC Protocol
+		{append([]byte{5}, make([]byte, PayloadHashLength-1)...), ErrInvalidLength},
+		{append([]byte{5}, make([]byte, PayloadHashLength+1)...), ErrInvalidLength},
 		// - a hanging uvarint for a namespace
 		{[]byte{4, 0xff}, ErrInvalidPayload},
 	}
@@ -634,8 +638,8 @@ func TestIDMax(t *testing.T) {
 }
 
 func TestTrailingBits(t *testing.T) {
-	goodStr := "f1xpbyy4tkdx5si2bgo37dubc2xwv6fum5tk57mia"
-	badStr := "f1xpbyy4tkdx5si2bgo37dubc2xwv6fum5tk57mid"
+	goodStr := "Q1xpbyy4tkdx5si2bgo37dubc2xwv6fum5tk57mia"
+	badStr := "Q1xpbyy4tkdx5si2bgo37dubc2xwv6fum5tk57mid"
 
 	_, err := NewFromString(goodStr)
 	assert.NoError(t, err, "should be able to decode the good string")
@@ -650,9 +654,9 @@ func TestDelegatedAddress(t *testing.T) {
 		subaddress []byte
 		expected   string
 	}{
-		{32, []byte{0xff, 0xff, 0xff, 0xff, 0xff}, "f432f77777777x32lpna"},
-		{varint.MaxValueUvarint63, []byte{}, "f49223372036854775807fiic6zsy"},
-		{varint.MaxValueUvarint63, make([]byte, MaxSubaddressLen), "f49223372036854775807faaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahwgiuam"},
+		{32, []byte{0xff, 0xff, 0xff, 0xff, 0xff}, "Q432f77777777x32lpna"},
+		{varint.MaxValueUvarint63, []byte{}, "Q49223372036854775807fiic6zsy"},
+		{varint.MaxValueUvarint63, make([]byte, MaxSubaddressLen), "Q49223372036854775807faaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahwgiuam"},
 	}
 
 	CurrentNetwork = Mainnet

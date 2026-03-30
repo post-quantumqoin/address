@@ -390,7 +390,7 @@ func decode(a string) (Address, error) {
 
 	var cksum, payload []byte
 	if protocol == Delegated {
-		parts := strings.SplitN(raw, "f", 2)
+		parts := strings.SplitN(raw, "q", 2)
 		if len(parts) != 2 {
 			return Undef, ErrInvalidPayload
 		}

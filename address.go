@@ -310,7 +310,7 @@ func encode(network Network, addr Address) (string, error) {
 				return UndefAddressString, xerrors.Errorf("could not decode delegated address namespace: %w", err)
 			}
 			payload = payload[n:]
-			strAddr += fmt.Sprintf("%df", namespace)
+			strAddr += fmt.Sprintf("%dq", namespace)
 		}
 
 		// Then encode the payload (or the rest of it) and the checksum.
